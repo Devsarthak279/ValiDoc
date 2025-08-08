@@ -210,22 +210,6 @@ npm run dev
 ```
 
 
-
-10. Access the application in the browser
-
-
-
-is this code correct 
-
-
-
-```
-
-npm run dev
-
-```
-
-
 10. 🌐 Access the Application
 
 Once both servers are running, open your browser and navigate to:
