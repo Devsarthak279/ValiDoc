@@ -1,12 +1,13 @@
 <h1 align="center">📄 ValiDoc</h1>
 
-<p align="center">One-click, secure, and portable document verification system using image steganography.</p>
+<p align="center">One-click, secure, and portable document verification system using image steganography.p>
 
 ---
 
 ## 🚀 Overview
 
-**ValiDoc** eliminates the hassle of verifying digital documents. Using smart steganography, it embeds verification data directly into image files. The result? A self-contained, portable, and tamper-evident document that can be authenticated anywhere — with just one click.
+**ValiDoc** Tired of the hassle of checking if a digital document is legit? ValiDoc makes it easy. It cleverly hides verification data right inside the document's image file. This creates a single, secure file that you can check anywhere, anytime, with just a click. No more guessing if that certificate or ID is real.
+
 
 ---
 
@@ -37,7 +38,6 @@ We use **image steganography** to hide verification info within random RGB pixel
 | Layer         | Tools & Frameworks                     |
 |--------------|----------------------------------------|
 | Frontend Web | React.js, Tailwind CSS                 |
-| Mobile App   | Kotlin *(Work in progress)*            |
 | Backend      | Node.js, Express.js                    |
 | Database     | MongoDB                                |
 | Auth         | JWT (JSON Web Tokens)                  |
