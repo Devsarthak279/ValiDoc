@@ -48,34 +48,34 @@ We use **image steganography** to hide verification info within random RGB pixel
 ## 🖥️ Screenshots
 
 ### 🏢 Organization Registration
-![Register](https://raw.githubusercontent.com/Devsarthak279/ValiDoc/main/assets/screenshots/Register.png)
+![Register](https://raw.githubusercontent.com/Devsarthak279/ValiDoc/master/assets/screenshots/Register.png)
 
 ### 🔐 Login
-![Login](https://raw.githubusercontent.com/Devsarthak279/ValiDoc/main/assets/screenshots/Login.png)
+![Login](https://raw.githubusercontent.com/Devsarthak279/ValiDoc/master/assets/screenshots/Login.png)
 
 ### 🧬 Digitize a Document  
 > ⚠️ Only verified organizations can access this section.
-![Digitize](https://raw.githubusercontent.com/Devsarthak279/ValiDoc/main/assets/screenshots/Digitize.png)
+![Digitize](https://raw.githubusercontent.com/Devsarthak279/ValiDoc/master/assets/screenshots/Digitize.png)
 
 ### ✅ Verify a Document
-![Verify](https://raw.githubusercontent.com/Devsarthak279/ValiDoc/main/assets/screenshots/Verify.png)
+![Verify](https://raw.githubusercontent.com/Devsarthak279/ValiDoc/master/assets/screenshots/Verify.png)
 
 ---
 
 ## 🧩 System Architecture
 
 ### 📥 Digitization Flow
-<img src="https://raw.githubusercontent.com/Devsarthak279/ValiDoc/main/assets/architecture/Digitize.jpeg" alt="Digitization Architecture" width="700"/>
+<img src="https://raw.githubusercontent.com/Devsarthak279/ValiDoc/master/assets/architecture/Digitize.jpeg" alt="Digitization Architecture" width="700"/>
 
 ### 🔎 Verification Flow
-<img src="https://raw.githubusercontent.com/Devsarthak279/ValiDoc/main/assets/architecture/Verification.jpeg" alt="Verification Architecture" width="700"/>
+<img src="https://raw.githubusercontent.com/Devsarthak279/ValiDoc/master/assets/architecture/Verification.jpeg" alt="Verification Architecture" width="700"/>
 
 ---
 
 ## 📦 Installation
 
 Get started with ValiDoc by following the guide here:  
-🔗 [Installation Guide →](https://github.com/Devsarthak279/ValiDoc/blob/main/Installation%20Guide.md)
+🔗 [Installation Guide →](https://github.com/Devsarthak279/ValiDoc/blob/master/Installation%20Guide.md)
 
 ---
 
