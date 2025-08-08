@@ -1,6 +1,6 @@
 <h1 align="center">📄 ValiDoc</h1>
 
-<p align="center">One-click, secure, and portable document verification system using image steganography.p>
+<p align="center">One-click, secure, and portable document verification system using image steganography.<p>
 
 ---
 
