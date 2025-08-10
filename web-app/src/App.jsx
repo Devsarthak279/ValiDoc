@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { NavLink, Outlet, useLocation } from 'react-router-dom'
-import Loga from './assets/Logo.png'
+import Logo from './assets/Logo.png'
 
 function App() {
   const [count, setCount] = useState(0)
