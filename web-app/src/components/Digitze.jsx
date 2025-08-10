@@ -19,8 +19,8 @@ function Digitze() {
     const [loader, setLoader] = useState(false)
 
     useEffect(() => {
-        
-        fetch("/api/v1/organizations/isLogin")
+        const API_BASE = import.meta.env.VITE_API_URL;
+        fetch(`${API_BASE}/api/v1/organizations/isLogin`)
         .then((data) => {
             return data.json()
         })
@@ -50,8 +50,9 @@ function Digitze() {
             formData.append("title" , title);
             formData.append("owner" , owner);
             formData.append("data" , data);
+            const API_BASE = import.meta.env.VITE_API_URL;
 
-            fetch("/api/v1/documents/create" , {
+            fetch(`${API_BASE}/api/v1/documents/create` , {
                 method: "POST",
                 body: formData
 
@@ -119,7 +120,7 @@ function Digitze() {
         
                         
         
-                        {recieved && <img className='max-h-full max-w-full' src="/api/v1/documents/getImage"></img>}
+                        {recieved && <img className='max-h-full max-w-full' src={`${import.meta.env.VITE_API_URL}/api/v1/documents/getImage`}></img>}
                     </div>
         
                     <div className='h-full w-[40vw] pl-10 text-white pr-10'>
@@ -169,7 +170,7 @@ function Digitze() {
                                 {loader && <Spinner/>}
                             </button>
 
-                            {recieved && <a className='w-[8vw] flex items-center justify-center pt-2 pb-2 text-md bg-white rounded-lg text-black font-normal' href='/api/v1/documents/getImage' download="/api/getImage">Download</a>}
+                            {recieved && <a className='w-[8vw] flex items-center justify-center pt-2 pb-2 text-md bg-white rounded-lg text-black font-normal' href={`${import.meta.env.VITE_API_URL}/api/v1/documents/getImage`} download="/api/getImage">Download</a>}
                 
                         </div>
                         <h1 className='text-sm'>{error}</h1> 

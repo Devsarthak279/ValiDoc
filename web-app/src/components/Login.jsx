@@ -26,8 +26,9 @@ function Register() {
         }
 
         setLoader(true)
+        const API_BASE = import.meta.env.VITE_API_URL;
 
-        fetch('/api/v1/organizations/login' , {
+        fetch(`${API_BASE}/api/v1/organizations/login` , {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json'
