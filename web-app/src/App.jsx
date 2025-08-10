@@ -8,7 +8,8 @@ function App() {
   let location = useLocation();
  
   useEffect(() => {
-    fetch("/api/v1/organizations/isLogin")
+    const API_BASE = import.meta.env.VITE_API_URL;
+    fetch(`${API_BASE}/api/v1/organizations/isLogin`)
     .then((data) => {
         return data.json()
     })
@@ -19,7 +20,8 @@ function App() {
   }, [location])
 
   const handleLogout = () => {
-    fetch("/api/v1/organizations/logout" , {
+    const API_BASE = import.meta.env.VITE_API_URL;
+    fetch(`${API_BASE}/api/v1/organizations/logout` , {
       method: "POST",
     }).then((data) => {
       console.log(data)
