@@ -47,21 +47,24 @@ function App() {
                   return'text-blue-500'
                   
                 }
-              }} to="/verify">Verify</NavLink>.
+              }} to="/verify">Verify</NavLink>
 
             <NavLink 
               className={({isActive}) => {
                 if(isActive) return'text-blue-500'
-              }} to="/">Home</NavLink>.
+              }} to="/">Home</NavLink>
 
             <NavLink 
               className={({isActive}) =>  {
                 if(isActive) return'text-blue-500'
               }} to="/digitize">Digitize</NavLink>
           </div>
-          <div className='w-1/3 flex items-center justify-end'>
+          <div className='w-1/3 flex items-center justify-end gap-4'>
             {!isLoggedIn && 
-              <NavLink className='bg-blue-700 text-white flex items-center justify-center rounded-full w-[10vw] p-2 mr-10' to="/register">Register</NavLink>
+              <>
+                <NavLink className='bg-blue-700 text-white flex items-center justify-center rounded-full w-[10vw] p-2' to="/login">Login</NavLink>
+                <NavLink className='bg-blue-700 text-white flex items-center justify-center rounded-full w-[10vw] p-2 mr-10' to="/register">Register</NavLink>
+              </>
             }
 
             {isLoggedIn && 

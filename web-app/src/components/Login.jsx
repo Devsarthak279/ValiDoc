@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import Spinner from './Spinner'
 
-function Register() {
+function Login() {
     
     
     const [email, setEmail] = useState("")
@@ -105,4 +105,4 @@ function Register() {
   )
 }
 
-export default Register
+export default Login
