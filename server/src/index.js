@@ -8,11 +8,11 @@ connectDB()
 .then(() => {
     console.log("MongoDB Connection Successfull")
 
-    app.listen(4000 , () => {
-        console.log("App is running on PORT: 4000")
+    const port = process.env.PORT || 4000;
+    app.listen(port , () => {
+        console.log(`App is running on PORT: ${port}`)
     })   
 })
 .catch((error) => {
     console.log("Mongo DB Connection Error: " , error)
 })
-
