@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { NavLink, Outlet, useLocation } from 'react-router-dom'
-
+import Logo from "./assets/Logo.png"
 
 function App() {
   const [count, setCount] = useState(0)
@@ -33,7 +33,7 @@ function App() {
 
           <div className='w-1/3 flex items-center gap-2'>
             <div className='logo flex h-[10vh] w-[10vh] rounded-full bg-white ml-10'>
-              <img src='/public/Logo.png' className='h-full w-full'></img>
+              <img src={Logo} className='h-full w-full'></img>
             </div>
             <h1 className='text-lg text-white font-semibold'>ValiDoc</h1>
           </div>
