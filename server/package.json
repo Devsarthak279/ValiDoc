@@ -4,8 +4,10 @@
   "description": "A backend for document verification ",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon src/index.js"
-  },
+  "start": "node src/index.js",
+  "dev": "nodemon src/index.js",
+  "build": "npm install"
+},
   "author": "sarthak",
   "license": "ISC",
   "dependencies": {
