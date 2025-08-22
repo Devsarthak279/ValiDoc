@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { ImFolderUpload } from "react-icons/im";
-import { API_BASE_URL } from '../../config.js';
+import { API_BASE_URL } from '../config.js';
 
 function Verify() {
 
