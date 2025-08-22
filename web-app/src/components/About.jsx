@@ -1,12 +1,12 @@
 import React, {useState, useEffect} from 'react'
 import { NavLink } from 'react-router-dom'
-
+import { API_BASE_URL } from '../../config.js';
 
 function About() {
   const [isLoggedIn, setIsLoggedIn] = useState(false)
   
   useEffect(() => {
-    fetch("/api/v1/organizations/isLogin")
+    fetch(`${API_BASE_URL}/api/v1/organizations/isLogin`)
     .then((data) => {
         return data.json()
     })

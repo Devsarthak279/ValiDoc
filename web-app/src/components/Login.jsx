@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import Spinner from './Spinner'
+import { API_BASE_URL } from '../../config.js';
 
 function Login() {
     
@@ -27,7 +28,7 @@ function Login() {
 
         setLoader(true)
 
-        fetch('/api/v1/organizations/login' , {
+        fetch(`${API_BASE_URL}/api/v1/organizations/login` , {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json'

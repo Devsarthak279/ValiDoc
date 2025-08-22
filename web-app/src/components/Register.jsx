@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import {useNavigate} from 'react-router-dom'
 import Spinner from './Spinner'
+import { API_BASE_URL } from '../../config.js';
+
 
 function Register() {
     
@@ -40,7 +42,7 @@ function Register() {
 
         setLoader(true)
 
-        fetch('/api/v1/organizations/register' , {
+       fetch(`${API_BASE_URL}/api/v1/organizations/register` , {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json'

@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { ImFolderUpload } from "react-icons/im";
+import { API_BASE_URL } from '../../config.js';
 
 function Verify() {
 
@@ -21,7 +22,7 @@ function Verify() {
             const formData = new FormData();
             formData.append("document" , document);
 
-            fetch("/api/v1/documents/verify" , {
+            fetch(`${API_BASE_URL}/api/v1/documents/verify` , {
                 method: "POST",
                 body: formData
 
@@ -48,7 +49,7 @@ function Verify() {
 
     const handleReport = () => {
         
-        fetch("/api/v1/documents/report" , {
+        fetch(`${API_BASE_URL}/api/v1/documents/report` , {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json'

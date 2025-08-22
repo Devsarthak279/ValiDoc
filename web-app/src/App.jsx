@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { NavLink, Outlet, useLocation } from 'react-router-dom'
 import Logo from "./assets/Logo.png"
+import { API_BASE_URL } from '../../config.js';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -8,7 +9,7 @@ function App() {
   let location = useLocation();
  
   useEffect(() => {
-    fetch("/api/v1/organizations/isLogin")
+    fetch(`${API_BASE_URL}/api/v1/organizations/isLogin`)
     .then((data) => {
         return data.json()
     })
@@ -19,7 +20,7 @@ function App() {
   }, [location])
 
   const handleLogout = () => {
-    fetch("/api/v1/organizations/logout" , {
+    fetch(`${API_BASE_URL}/api/v1/organizations/logout` , {
       method: "POST",
     }).then((data) => {
       console.log(data)

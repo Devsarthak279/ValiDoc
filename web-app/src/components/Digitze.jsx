@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { ImFolderUpload } from "react-icons/im";
 import Spinner from './Spinner';
+import { API_BASE_URL } from '../../config.js'
 
 function Digitze() {
 
@@ -20,7 +21,7 @@ function Digitze() {
 
     useEffect(() => {
         
-        fetch("/api/v1/organizations/isLogin")
+        fetch(`${API_BASE_URL}/api/v1/organizations/isLogin`)
         .then((data) => {
             return data.json()
         })
@@ -51,7 +52,7 @@ function Digitze() {
             formData.append("owner" , owner);
             formData.append("data" , data);
 
-            fetch("/api/v1/documents/create" , {
+             fetch(`${API_BASE_URL}/api/v1/documents/create` , {
                 method: "POST",
                 body: formData
 
