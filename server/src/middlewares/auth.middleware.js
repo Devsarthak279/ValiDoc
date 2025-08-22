@@ -1,37 +1,34 @@
-const jwt = require("jsonwebtoken")
+const jwt = require("jsonwebtoken");
 
-let errorCode = 400
-let errorMessage = ""
-
-function verifyJWT (req, res, next){
-
+function verifyJWT(req, res, next) {
     try {
-        const token = req.cookies.AccessToken
-    
-        if(!token) {
-            errorMessage = "Unauthorized Request: No access token found"
-            errorCode = 401;
-            throw new Error
+        // Get token from Authorization header
+        const authHeader = req.headers["authorization"];
+        if (!authHeader || !authHeader.startsWith("Bearer ")) {
+            return res.status(401).json({
+                errorMessage: "Unauthorized Request: No token provided",
+            });
         }
-    
-    
-        const decodedToken = jwt.verify(token, "access-token-seccret-22-2-0")
-    
-        if(!decodedToken._id){
-            errorMessage = "Unauthorized Request: Invalid Token"
-            errorCode = 401;
-            throw new Error
+
+        const token = authHeader.split(" ")[1];
+
+        // Verify the token
+        const decodedToken = jwt.verify(token, "access-token-seccret-22-2-0");
+        if (!decodedToken._id) {
+            return res.status(401).json({
+                errorMessage: "Unauthorized Request: Invalid token",
+            });
         }
-    
-        req.token = decodedToken
-    
-        next()
+
+        // Attach decoded data to req
+        req.token = decodedToken;
+        next();
 
     } catch (error) {
-        res.status(errorCode).json({
-            errorMessage
-        })
+        return res.status(401).json({
+            errorMessage: "Unauthorized Request: Token verification failed",
+        });
     }
 }
 
-module.exports = verifyJWT
+module.exports = verifyJWT;

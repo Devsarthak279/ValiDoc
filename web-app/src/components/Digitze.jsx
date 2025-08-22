@@ -21,7 +21,12 @@ function Digitze() {
 
     useEffect(() => {
         
-        fetch(`${API_BASE_URL}/api/v1/organizations/isLogin`)
+        fetch(`${API_BASE_URL}/api/v1/organizations/isLogin`, {
+        method: "GET",
+        headers: {
+        'Authorization': `Bearer ${localStorage.getItem("token")}`  // <-- HIGHLIGHTED CHANGE
+        }
+        })
         .then((data) => {
             return data.json()
         })
@@ -29,17 +34,17 @@ function Digitze() {
           setIsLoggedIn(data.isLogin)
         })
     
-      }, [location])
+      }, [])
 
     const handleSubmit = () => {
 
         if(title === ""){
-            setError("Email is required")
+            setError("Title is required")
             return
         }
 
         if(owner === ""){
-            setError("Password is Required")
+            setError("Owner is required")
             return
         }
 
@@ -54,11 +59,13 @@ function Digitze() {
 
              fetch(`${API_BASE_URL}/api/v1/documents/create` , {
                 method: "POST",
+                headers: {
+                    'Authorization': `Bearer ${localStorage.getItem("token")}`  // <-- HIGHLIGHTED CHANGE
+                },
                 body: formData
-
             })
             .then((data) => {
-                if(data.status != 200){
+                if(data.status !== 200){
                    isError = true
                    return data.json()
                 }else {

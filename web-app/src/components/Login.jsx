@@ -50,6 +50,7 @@ function Login() {
             if(isError){
                 setError(data.errorMessage)
             }else{
+                localStorage.setItem("token", data.token);
                 navigate("/digitize")
             }
         })
