@@ -6,8 +6,7 @@ function About() {
   const [isLoggedIn, setIsLoggedIn] = useState(false)
   
   useEffect(() => {
-    const API_BASE = import.meta.env.VITE_API_URL;
-    fetch(`${API_BASE}/api/v1/organizations/isLogin`)
+    fetch("/api/v1/organizations/isLogin")
     .then((data) => {
         return data.json()
     })

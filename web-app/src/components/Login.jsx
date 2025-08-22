@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import Spinner from './Spinner'
 
-function Login() {
+function Register() {
     
     
     const [email, setEmail] = useState("")
@@ -26,9 +26,8 @@ function Login() {
         }
 
         setLoader(true)
-        const API_BASE = import.meta.env.VITE_API_URL;
 
-        fetch(`${API_BASE}/api/v1/organizations/login` , {
+        fetch('/api/v1/organizations/login' , {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json'
@@ -105,4 +104,4 @@ function Login() {
   )
 }
 
-export default Login
+export default Register

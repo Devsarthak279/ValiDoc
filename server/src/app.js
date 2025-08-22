@@ -1,14 +1,9 @@
 const express = require('express')
-const cors = require('cors')
 cookieParser = require('cookie-parser')
 const app = express()
 
 const upload = require("./middlewares/multer.middleware")
 
-app.use(cors({
-    origin: 'https://validoc-web.onrender.com',
-    credentials: true
-}));
 
 app.use(express.json())
 app.use(cookieParser())

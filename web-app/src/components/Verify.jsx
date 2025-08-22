@@ -20,9 +20,8 @@ function Verify() {
         if(document){
             const formData = new FormData();
             formData.append("document" , document);
-            const API_BASE = import.meta.env.VITE_API_URL;
 
-            fetch(`${API_BASE}/api/v1/documents/verify` , {
+            fetch("/api/v1/documents/verify" , {
                 method: "POST",
                 body: formData
 
@@ -48,8 +47,8 @@ function Verify() {
     }
 
     const handleReport = () => {
-        const API_BASE = import.meta.env.VITE_API_URL;
-        fetch(`${API_BASE}/api/v1/documents/report` , {
+        
+        fetch("/api/v1/documents/report" , {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json'

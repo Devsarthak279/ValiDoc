@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { NavLink, Outlet, useLocation } from 'react-router-dom'
-import Logo from './assets/Logo.png'
+
 
 function App() {
   const [count, setCount] = useState(0)
@@ -8,8 +8,7 @@ function App() {
   let location = useLocation();
  
   useEffect(() => {
-    const API_BASE = import.meta.env.VITE_API_URL;
-    fetch(`${API_BASE}/api/v1/organizations/isLogin`)
+    fetch("/api/v1/organizations/isLogin")
     .then((data) => {
         return data.json()
     })
@@ -20,8 +19,7 @@ function App() {
   }, [location])
 
   const handleLogout = () => {
-    const API_BASE = import.meta.env.VITE_API_URL;
-    fetch(`${API_BASE}/api/v1/organizations/logout` , {
+    fetch("/api/v1/organizations/logout" , {
       method: "POST",
     }).then((data) => {
       console.log(data)
@@ -35,7 +33,7 @@ function App() {
 
           <div className='w-1/3 flex items-center gap-2'>
             <div className='logo flex h-[10vh] w-[10vh] rounded-full bg-white ml-10'>
-              <img src={Logo} className='h-full w-full'></img>
+              <img src='/public/Logo.png' className='h-full w-full'></img>
             </div>
             <h1 className='text-lg text-white font-semibold'>ValiDoc</h1>
           </div>
@@ -47,24 +45,21 @@ function App() {
                   return'text-blue-500'
                   
                 }
-              }} to="/verify">Verify</NavLink>
+              }} to="/verify">Verify</NavLink>.
 
             <NavLink 
               className={({isActive}) => {
                 if(isActive) return'text-blue-500'
-              }} to="/">Home</NavLink>
+              }} to="/">Home</NavLink>.
 
             <NavLink 
               className={({isActive}) =>  {
                 if(isActive) return'text-blue-500'
               }} to="/digitize">Digitize</NavLink>
           </div>
-          <div className='w-1/3 flex items-center justify-end gap-4'>
+          <div className='w-1/3 flex items-center justify-end'>
             {!isLoggedIn && 
-              <>
-                <NavLink className='bg-blue-700 text-white flex items-center justify-center rounded-full w-[10vw] p-2' to="/login">Login</NavLink>
-                <NavLink className='bg-blue-700 text-white flex items-center justify-center rounded-full w-[10vw] p-2 mr-10' to="/register">Register</NavLink>
-              </>
+              <NavLink className='bg-blue-700 text-white flex items-center justify-center rounded-full w-[10vw] p-2 mr-10' to="/register">Register</NavLink>
             }
 
             {isLoggedIn && 
