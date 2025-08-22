@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { NavLink, Outlet, useLocation } from 'react-router-dom'
 import Logo from "./assets/Logo.png"
-import { API_BASE_URL } from '../../config.js';
+import { API_BASE_URL } from '../config.js';
 
 function App() {
   const [count, setCount] = useState(0)
