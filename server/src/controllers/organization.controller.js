@@ -6,7 +6,9 @@ let errorCode = 500;
 let errorMessage = ""
 
 async function generateAccessAndRefreshToken(organization) {
-
+    if (!organization) {
+        throw new Error("Organization object is undefined")
+    }
     const accessToken = organization.generateAccessToken()
     const refreshToken = organization.generateRefreshToken()
 
@@ -62,6 +64,8 @@ async function registerOrganization(req, res) {
             password
         })
 
+        console.log("Created org:", createdOrg)
+
         if(!createdOrg){
             errorMessage = "Database Error: Organization creation failed"
             errorCode = 500;
@@ -103,6 +107,8 @@ async function loginOrganization(req, res) {
         // find organization with given email id
         const existedOrg = await Organization.findOne({email})
     
+        console.log("Found org:", existedOrg)
+
         if(!existedOrg){
             errorCode = 404
             errorMessage = "Bad Request: No organization with this email found"
